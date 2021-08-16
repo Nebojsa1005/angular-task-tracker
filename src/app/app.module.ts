@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './viewes/home/home.component'; 
 import { NewTaskComponent } from './viewes/newTask/newTask/newTask.component';
 import { TaskComponent } from './viewes/task/task/task.component';
+import { TaskListComponent } from './viewes/newTask/components/task-list/task-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     NewTaskComponent,
-    TaskComponent
+    TaskComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,

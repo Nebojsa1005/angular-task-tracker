@@ -17,9 +17,10 @@ export class NewTaskComponent implements OnInit {
   previous: string = ''
 
   constructor(private tasksService: TasksService, private route: ActivatedRoute, private router: Router, private location: Location) { }
+  tasks: any = []
 
   ngOnInit() {
-
+    this.tasks = this.tasksService.getTasks()
   }
 
   submit(): void {

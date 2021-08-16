@@ -21,17 +21,19 @@ private url = 'https://tasktracker-78619-default-rtdb.firebaseio.com/'
 constructor(private http: HttpClient) { }
 
   getTasks() {
-    this.tasks = []
-    this.http.get<Task[]>(`${this.url}/tasks.json`).subscribe(data => {
-      for (let task in data) {
-        this.tasks.push({
-          text: data[task].text,
-          id: task,
-          done: data[task].done
-        })
-      }
-    })
-    return this.tasks
+    return this.http.get<Task[]>(`${this.url}/tasks.json`)
+  }
+
+  setData(data: any) {
+    let formatedData = []
+    for (let task in data) {
+      formatedData.push({
+        text: data[task].text,
+        id: task,
+        done: data[task].done
+      })
+    }
+    return formatedData
   }
 
   addTask(task: Task): Observable<Task> {  

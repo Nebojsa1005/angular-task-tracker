@@ -1,0 +1,13 @@
+<ul>
+    <li [routerLink]="[task.id]" *ngFor="let task of tasks; let index = index">
+        <div *ngIf="editOn">
+            <input type="text" [(ngModel)]="editText"> - 
+            <button (click)="onEdit(task.id)">Edit Task</button> - 
+            <button (click)="onDelete(task.id)">Delete</button>
+        </div>
+        {{ task.text }} <button (click)="edit()">Edit</button>
+    </li>
+</ul>
+
+
+<a routerLink="/new">Create a new one</a>
